@@ -32,6 +32,14 @@ int posicionarNavioVertical(int tabuleiro[TAMANHO_TABULEIRO][TAMANHO_TABULEIRO],
     return 0;
 }
 
+// Função para posicionar um navio diagonalmente
+int posicionarNavioDiagonal(int tabuleiro[TAMANHO_TABULEIRO][TAMANHO_TABULEIRO], int linha, int coluna) {
+    for (int i = 0; i < TAMANHO_NAVIO; i++) {
+        tabuleiro[linha + i][coluna + i] = 3; // Navio
+    }
+    return 0;
+}
+
 // Função para exibir o tabuleiro
 int exibirTabuleiro(int tabuleiro[TAMANHO_TABULEIRO][TAMANHO_TABULEIRO]) {
     for (int i = 0; i < TAMANHO_TABULEIRO; i++) {
@@ -52,6 +60,8 @@ int main() {
     // Posicionar os navios
     posicionarNavioHorizontal(tabuleiro, 2, 3);
     posicionarNavioVertical(tabuleiro, 5, 7);
+    posicionarNavioDiagonal(tabuleiro, 1, 1);
+    posicionarNavioDiagonal(tabuleiro, 7, 3);
 
     // Exibir o tabuleiro
     exibirTabuleiro(tabuleiro);
